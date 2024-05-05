@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Chat App</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.5/socket.io.js" integrity="sha512-luMnTJZ7oEchNDZAtQhgjomP1eZefnl82ruTH/3Oj/Yu5qYtwL7+dVRccACS/Snp1lFXq188XFipHKYE75IaQQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body> <center>
+    <h1>Chat App</h1>
+
+    <h2>Enter msg to send to server</h2> <input type="text" placeholder="Enter something here"> <br><br><br>
+    <button>Send</button>
+
+    <div>
+        <p>  hey this is my msg </p> 
+    
+    </div>
+    <script>
+        var socket = io()
+       
+
+        
+
+    document.querySelector('button').addEventListener('click',function() {
+        var msg = document.querySelector("input").value 
+        socket.emit("msg",msg)
+    })
+    </script>
+</body>
+</html>
